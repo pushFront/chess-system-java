@@ -5,10 +5,10 @@ public class Board {
     private int columns;
     private Piece[][] pieces;
 
-    public Board(int rows, int columns) {
+    public Board(int rows, int columns) { /* rows = 8 , columns  = 8 */
         this.rows = rows;
         this.columns = columns;
-        pieces = new Piece[rows][columns];
+        pieces = new Piece[rows][columns];  /* matrix 8x8 */
     }
 
     public int getRows() {
@@ -33,5 +33,10 @@ public class Board {
 
     public Piece piece(Position position) {
         return pieces[position.getRow()][position.getColumn()];
+    }
+
+    public void placePiece(Piece piece, Position position) {
+        pieces[position.getRow()][position.getColumn()] = piece;
+        piece.position = position;
     }
 }
